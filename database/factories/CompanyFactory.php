@@ -20,6 +20,7 @@ class CompanyFactory extends Factory
         return [
             'user_id' => User::factory()->create()->id,
             'name' => fake()->name(),
+            'logo' => fake()->url(),
             'industry' => fake()->words(3, true),
             'location' => fake()->address(),
             'description' => fake()->paragraphs(6, true),

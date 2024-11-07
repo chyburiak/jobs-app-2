@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Application;
+use App\Models\Career;
 use App\Models\Company;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -15,7 +17,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory(30)->create();
-        Company::factory(10)->create();
+        Company::factory(5)->create();
+        Career::factory(10)->create();
+        Application::factory(8)->create();
 
         User::factory()->create([
             'name' => 'Test User',

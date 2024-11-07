@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('companies', function (Blueprint $table) {
+        Schema::create('applications', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->string('name')->unique();
-            $table->string('logo')->nullable();
-            $table->text('industry')->nullable();
-            $table->text('location')->nullable();
-            $table->longText('description')->nullable();
-            $table->string('website')->nullable()->unique();
+            $table->foreignId('career_id')->constrained('careers')->cascadeOnDelete();
+            $table->string('applied_cv');
+            $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('applications');
     }
 };
