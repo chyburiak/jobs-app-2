@@ -2,8 +2,8 @@
 import Checkbox from '@/Components/Checkbox.vue';
 import InputError from '@/Components/Form/InputError.vue';
 import InputLabel from '@/Components/Form/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/Form/TextInput.vue';
+import PrimaryButton from '@/Components/PrimaryButton.vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
@@ -69,22 +69,31 @@ const submit = () => {
                 </label>
             </div>
 
-            <div class="mt-4 flex items-center justify-end">
+            <div class="mt-4 flex flex-col items-center justify-center">
                 <Link
                     v-if="canResetPassword"
                     :href="route('password.request')"
-                    class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    class="mb-4 text-blue-650 underline underline-offset-4 transition-all duration-300 ease-in hover:text-blue-500"
                 >
                     Forgot your password?
                 </Link>
 
                 <PrimaryButton
-                    class="ms-4"
+                    class="mb-2 ms-4"
                     :class="{ 'opacity-25': form.processing }"
                     :disabled="form.processing"
                 >
                     Log in
                 </PrimaryButton>
+
+                <p class="text-base">
+                    Don't have an account?
+                    <Link
+                        class="text-blue-650 underline underline-offset-4 transition-all duration-300 ease-in hover:text-blue-500"
+                        :href="route('register')"
+                        >Create an account</Link
+                    >
+                </p>
             </div>
         </form>
     </GuestLayout>
