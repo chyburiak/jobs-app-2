@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->constrained()->cascadeOnDelete();
-            $table->text('title');
-            $table->string('description');
+            $table->char('title');
+            $table->longText('description');
             $table->string('location');
             $table->integer('salary')->nullable();
             $table->enum('type', ['In person', 'Remote', 'Hybrid']);
