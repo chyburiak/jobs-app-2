@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('career_id')->constrained('careers')->cascadeOnDelete();
             $table->string('applied_cv');
             $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
+            $table->longText('cover_letter')->nullable();
             $table->timestamps();
         });
     }

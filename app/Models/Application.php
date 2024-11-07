@@ -18,5 +18,16 @@ class Application extends Model
     protected $fillable = [
         'applied_cv',
         'status',
+        'cover_letter',
     ];
+
+    public function career(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Career::class);
+    }
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

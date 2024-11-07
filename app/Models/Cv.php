@@ -19,4 +19,9 @@ class Cv extends Model
         'name',
         'file',
     ];
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

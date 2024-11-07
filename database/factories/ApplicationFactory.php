@@ -23,6 +23,7 @@ class ApplicationFactory extends Factory
             'career_id' => Career::factory()->create()->id,
             'applied_cv' => fake()->url(),
             'status' => $this->faker->randomElement(['pending', 'accepted', 'rejected']),
+            'cover_letter' => fake()->text(),
         ];
     }
 }
