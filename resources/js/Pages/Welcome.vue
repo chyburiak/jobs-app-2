@@ -1,5 +1,6 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
+import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 
 defineProps({
     isLoggedIn: {
@@ -17,9 +18,9 @@ defineProps({
 
     <main class="flex h-screen items-center justify-center">
         <div
-            class="container mx-auto flex flex-col items-center justify-center gap-6"
+            class="container mx-auto flex flex-col items-center justify-center gap-12"
         >
-            <h1 class="font-logo text-5xl font-bold">Jobs App</h1>
+            <ApplicationLogo />
 
             <p v-if="isLoggedIn" class="text-lg">
                 Welcome, {{ userName }}. Navigate to

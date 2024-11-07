@@ -1,22 +1,19 @@
 <script setup>
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import { Link } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <div
-        class="flex min-h-screen flex-col items-center bg-gray-100 pt-6 sm:justify-center sm:pt-0"
-    >
-        <div>
-            <Link href="/">
-                <ApplicationLogo class="h-20 w-20 fill-current text-gray-500" />
-            </Link>
-        </div>
+    <div class="grid min-h-screen place-items-center bg-white">
+        <div class="mb-32 flex w-520 flex-col items-center justify-center">
+            <div class="flex flex-col items-center gap-2">
+                <ApplicationLogo />
 
-        <div
-            class="mt-6 w-full overflow-hidden bg-white px-6 py-4 shadow-md sm:max-w-md sm:rounded-lg"
-        >
-            <slot />
+                <p class="text-xl">Please enter your login information</p>
+            </div>
+
+            <div class="mt-10 w-full">
+                <slot />
+            </div>
         </div>
     </div>
 </template>

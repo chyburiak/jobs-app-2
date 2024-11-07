@@ -16,6 +16,13 @@ export default {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
                 logo: ['Passion One', ...defaultTheme.fontFamily.serif],
             },
+            spacing: {
+                520: '32.5rem', // 520px
+            },
+            colors: {
+                'blue-650': '#5C73DB',
+                'gray-450': '#9FA6B2',
+            },
         },
     },
 
