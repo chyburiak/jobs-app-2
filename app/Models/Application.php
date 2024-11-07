@@ -21,6 +21,7 @@ class Application extends Model
         'cover_letter',
     ];
 
+    // TODO: Check for Polymorphic Relations solution here.
     public function career(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Career::class);
