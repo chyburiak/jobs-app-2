@@ -1,5 +1,12 @@
 <script setup>
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+
+defineProps({
+    text: {
+        type: Boolean,
+        default: true,
+    },
+});
 </script>
 
 <template>
@@ -8,7 +15,9 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue';
             <div class="flex flex-col items-center gap-2">
                 <ApplicationLogo />
 
-                <p class="text-xl">Please enter your login information</p>
+                <p v-if="text" class="text-xl">
+                    Please enter your login information
+                </p>
             </div>
 
             <div class="mt-10 w-full">
