@@ -1,9 +1,9 @@
 <script setup>
-import Checkbox from '@/Components/Checkbox.vue';
+import PrimaryButton from '@/Components/Buttons/PrimaryButton.vue';
+import Checkbox from '@/Components/Form/Checkbox.vue';
 import InputError from '@/Components/Form/InputError.vue';
 import InputLabel from '@/Components/Form/InputLabel.vue';
 import TextInput from '@/Components/Form/TextInput.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
@@ -65,7 +65,7 @@ const submit = () => {
             <div class="mt-4 block">
                 <label class="flex items-center">
                     <Checkbox name="remember" v-model:checked="form.remember" />
-                    <span class="ms-2 text-sm text-gray-600">Remember me</span>
+                    <span class="ms-2 text-sm">Remember me</span>
                 </label>
             </div>
 
@@ -79,7 +79,7 @@ const submit = () => {
                 </Link>
 
                 <PrimaryButton
-                    class="mb-2 ms-4"
+                    class="mb-2 w-full"
                     :class="{ 'opacity-25': form.processing }"
                     :disabled="form.processing"
                 >

@@ -23,6 +23,9 @@ export default {
                 'blue-650': '#5C73DB',
                 'gray-450': '#9FA6B2',
             },
+            padding: {
+                3.25: '0.813rem', // 13px
+            },
         },
     },
 
