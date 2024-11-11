@@ -1,14 +1,29 @@
-<script setup></script>
+<script setup>
+import Notification from '@/Components/Notification.vue';
+</script>
 
 <template>
-    <div class="grid min-h-screen grid-cols-12 grid-rows-12 bg-neutral-100">
-        <!-- Top header spanning across all columns -->
-        <div class="col-span-12 row-span-1 bg-red-400"></div>
+    <div class="bg-neutral-100">
+        <div class="mx-auto flex max-w-[1440px]">
+            <div class="w-2/12 bg-blue-650">sidebar</div>
 
-        <!-- Left sidebar spanning from row 3 to row 12 (10 rows) -->
-        <div class="col-span-2 row-span-11 bg-blue-400"></div>
+            <div class="flex min-h-screen w-10/12 flex-col">
+                <div
+                    class="flex items-center justify-between bg-white px-10 py-7"
+                >
+                    <div>
+                        <span class="text-base leading-6 text-zinc-500"
+                            >Breadcrumbs</span
+                        >
+                    </div>
 
-        <!-- Main content area spanning from row 3 to row 12 (10 rows) -->
-        <main class="col-span-10 row-span-11 bg-green-400"></main>
+                    <Notification />
+                </div>
+
+                <main class="px-10 py-5">
+                    <slot />
+                </main>
+            </div>
+        </div>
     </div>
 </template>
