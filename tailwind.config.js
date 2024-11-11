@@ -26,6 +26,9 @@ export default {
             padding: {
                 3.25: '0.813rem', // 13px
             },
+            backgroundImage: {
+                sidebar: "url('/images/sidebar-bg.svg')",
+            },
         },
     },
 
